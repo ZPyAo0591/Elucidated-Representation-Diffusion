@@ -706,7 +706,7 @@ class UNetModel(nn.Module):
             h = torch.cat([h, hs.pop()], dim=1)
             h = module(h, emb)
         h = h.type(x.dtype)
-        return self.out(h), h
+        return self.out(h)
 
 class SuperResModel(UNetModel):
     """
